@@ -20,8 +20,12 @@ const players = [
     }
 ];
 const renderPlayers = (playersList) => {
+    let points = "points";
     return playersList.map((player) => {
-        return <p key={player.id}>{player.name}</p>;
+        if(player.score === 1){
+            points = "point";
+        }
+        return <p key={player.id}>{player.name} has {player.score} {points}.</p>;
     });
 };
 
