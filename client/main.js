@@ -25,7 +25,7 @@ const renderPlayers = (playersList) => {
         if(player.score === 1){
             points = "point";
         }
-        return <p key={player.id}>{player.name} has {player.score} {points}.</p>;
+        return <p key={player._id}>{player.name} has {player.score} {points}.</p>;
     });
 };
 
