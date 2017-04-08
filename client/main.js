@@ -19,8 +19,10 @@ const players = [
         score: 67
     }
 ];
-const renderPlayers = () => {
-    return [<p key="1">1</p>, <p key="2">2</p>, <p key="3">3</p> ]
+const renderPlayers = (playersList) => {
+    return playersList.map((player) => {
+        return <p key={player.id}>{player.name}</p>;
+    });
 };
 
 Meteor.startup( () => {
@@ -31,7 +33,7 @@ Meteor.startup( () => {
             <h1>{title}</h1>
             <p>Hello {name}</p>
             <p>Se dice que no se puede escapar la ocean.</p>
-            {renderPlayers()}
+            {renderPlayers(players)}
         </div>);
     ReactDOM.render(jsx, document.getElementById("app")); //ReactDom takes two arguments: the first is the item you wish to render, and the second is the location to which you wish to render
 });
