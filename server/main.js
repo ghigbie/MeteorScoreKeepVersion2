@@ -1,5 +1,5 @@
-import { Meteor } from 'meteor/meteor';
+// import "./../imports/utils";
+import {greetUser} from "./../imports/utils";
 
-Meteor.startup(() => {
-  // code to run on server at startup
-});
+console.log("Log from /server/main.js");
+console.log(greetUser());
