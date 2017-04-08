@@ -1,7 +1,9 @@
 import React from "react"; // react only has one default export, which is called react
 import ReactDOM from "react-dom"; //this is the same situation for react-dom
 import {Meteor} from "meteor/meteor"; //this is a named export
+import {Players} from "./../imports/api/players"; //this will create a mini mongo dtabase
 
+console.log("Players list", Players.find().fetch());
 const players = [
     {
         _id: "1",
