@@ -15,18 +15,17 @@ const renderPlayers = (playersList) => {
 };
 
 Meteor.startup( () => {
-    let players = [];
     Tracker.autorun(() => {
-        players = Players.find().fetch();
+        let players = Players.find().fetch();
+        let title = "Score Keep";
+        let name = "Mike";
+        let jsx = (
+            <div className="container">
+                <h1>{title}</h1>
+                <p>Hello {name}</p>
+                <p>Se dice que no se puede escapar la oceana.</p>
+                {renderPlayers(players)}
+            </div>);
+        ReactDOM.render(jsx, document.getElementById("app")); //ReactDom takes two arguments: the first is the item you wish to render, and the second is the location to which you wish to render
     });
-    let title = "Score Keep";
-    let name = "Mike";
-    let jsx = (
-        <div className="container">
-            <h1>{title}</h1>
-            <p>Hello {name}</p>
-            <p>Se dice que no se puede escapar la oceana.</p>
-            {renderPlayers(players)}
-        </div>);
-    ReactDOM.render(jsx, document.getElementById("app")); //ReactDom takes two arguments: the first is the item you wish to render, and the second is the location to which you wish to render
 });
