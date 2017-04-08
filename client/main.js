@@ -28,4 +28,10 @@ Meteor.startup( () => {
             </div>);
         ReactDOM.render(jsx, document.getElementById("app")); //ReactDom takes two arguments: the first is the item you wish to render, and the second is the location to which you wish to render
     });
+
+    //inserts new doc into players collection
+    Players.insert({
+        name: "Bubba",
+        score: 19
+    });
 });
