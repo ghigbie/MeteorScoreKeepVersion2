@@ -1,9 +1,3 @@
-// import "./../imports/utils";
-import someDefault, {greetUser, name} from "./../imports/utils";
-import defaultFunction, {addNumbers} from "./../imports/math";
-
-console.log("Log from /client/main.js");
-console.log(greetUser(name));
-console.log(addNumbers(7, 3));
-console.log(someDefault);
-console.log(defaultFunction(9));
+import React from "react"; // react only has one default export, which is called react
+import ReactDom from "react-dom"; //this is the same situation for react-dom
+import {Meteor} from "meteor/meteor"; //this is a named export
